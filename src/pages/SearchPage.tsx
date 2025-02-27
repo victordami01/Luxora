@@ -46,7 +46,7 @@ const mockVenues: Venue[] = [
   },
   {
     id: '3',
-    name: 'Modern Nails Studio',
+    name: 'Modern Nails Studios',
     rating: 4.7,
     reviews: 89,
     distance: 1.5,
