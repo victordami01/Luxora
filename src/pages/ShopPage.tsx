@@ -166,7 +166,7 @@ const fashionItems: Product[] = [
   {
     id: '2',
     name: 'Classic Blazer',
-    category: 'Tops',
+    category: 'Male',
     price: 129.99,
     rating: 4.9,
     reviews: 203,
@@ -194,7 +194,7 @@ const priceTierProducts: Record<string, ExtendedProduct[]> = {
       id: 'b1',
       brand: 'EssentialWear',
       name: 'Classic Cotton T-Shirt',
-      category: 'Tops',
+      category: 'Male',
       price: 24.99,
       rating: 4.5,
       reviews: 128,
@@ -215,7 +215,7 @@ const priceTierProducts: Record<string, ExtendedProduct[]> = {
       id: 'm1',
       brand: 'Urban Style',
       name: 'Structured Blazer',
-      category: 'Tops',
+      category: 'Male',
       price: 89.99,
       rating: 4.8,
       reviews: 256,
@@ -289,7 +289,7 @@ const ShopPage = () => {
       case 'products':
         return ['Skincare', 'Makeup', 'Hair', 'Fragrance'];
       case 'fashion':
-        return ['Dresses', 'Tops', 'Bottoms', 'Accessories'];
+        return ['Male', 'Female'];
       default:
         return [];
     }

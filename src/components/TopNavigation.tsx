@@ -13,7 +13,7 @@ const TopNavigation = () => {
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center">
               <span className="text-2xl font-bold bg-gradient-to-r from-rose-500 to-purple-600 text-transparent bg-clip-text hover:opacity-80 transition-opacity">
-                LUXORA
+                TRENDE
               </span>
             </Link>
             
