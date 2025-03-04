@@ -42,6 +42,7 @@ interface Service {
   reviews: number;
   image: string;
   description: string;
+  inStock?:boolean; 
   
 }
 
@@ -54,17 +55,18 @@ interface ExtendedProduct extends Product {
 // Sample Data
 const services: Service[] = [
   {
-    id: '1',
+    id: '4',
     name: 'Dr Martens',
     category: 'Oxford',
     price: 29.99,
     rating: 4.8,
     reviews: 128,
     image: 'https://iili.io/3dcL8tj.webp?auto=format&fit=crop&q=80&w=800',
-    description: 'Long-lasting, hydrating formula with rich pigmentation'
+    description: 'Long-lasting, hydrating formula with rich pigmentation',
+    inStock: true,
   },
   {
-    id: '2',  
+    id: '5',  
     name: 'Air Force 1',
     category: 'Skincare',
     price: 49.99,
@@ -72,9 +74,10 @@ const services: Service[] = [
     reviews: 256,
     image: 'https://iili.io/3dcLjFS.webp?auto=format&fit=crop&q=80&w=800',
     description: 'Advanced formula with hyaluronic acid and vitamins',
+    inStock: true,
   },
   {
-    id: '3',
+    id: '6',
     name: 'Nike Shox',
     category: 'Hair',
     price: 89.99,
@@ -82,9 +85,10 @@ const services: Service[] = [
     reviews: 89,
     image: 'https://iili.io/3dl5veV.jpg?auto=format&fit=crop&q=80&w=800',
     description: 'Complete hair care system for all hair types',
+    inStock: true
   },
   {
-    id: '4',
+    id: '7',
     name: 'Cloud Slides',
     category: 'Skincare',
     price: 49.99,
@@ -92,9 +96,10 @@ const services: Service[] = [
     reviews: 256,
     image: 'https://iili.io/3dcLe9e.jpg?auto=format&fit=crop&q=80&w=800',
     description: 'Advanced formula with hyaluronic acid and vitamins',
+    inStock: true
   },
   {
-    id: '5',
+    id: '8',
     name: 'Obtaom Ballet flats',
     category: 'Skincare',
     price: 49.99,
@@ -102,9 +107,10 @@ const services: Service[] = [
     reviews: 256,
     image: 'https://iili.io/3dcLXP2.jpg?auto=format&fit=crop&q=80&w=800',
     description: 'Advanced formula with hyaluronic acid and vitamins',
+    inStock: true
   },
   {
-    id: '6',
+    id: '9',
     name: 'New Balance Trail',
     category: 'Skincare',
     price: 49.99,
@@ -112,6 +118,7 @@ const services: Service[] = [
     reviews: 256,
     image: 'https://iili.io/3dlAsCg.webp?auto=format&fit=crop&q=80&w=800',
     description: 'Advanced formula with hyaluronic acid and vitamins',
+    inStock: true
   },
 ];
 const beautyProducts: Product[] = [
@@ -208,15 +215,13 @@ const priceTierProducts: Record<string, ExtendedProduct[]> = {
       ],
       inStock: true,
       stockCount: 50
-    }
-  ],
-  midRange: [
+    },
     {
       id: 'm1',
       brand: 'Urban Style',
       name: 'Structured Blazer',
       category: 'Male',
-      price: 89.99,
+      price: 49.99,
       rating: 4.8,
       reviews: 256,
       image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800',
@@ -229,9 +234,7 @@ const priceTierProducts: Record<string, ExtendedProduct[]> = {
       ],
       inStock: true,
       stockCount: 35
-    }
-  ],
-  luxury: [
+    },
     {
       id: 'l1',
       brand: 'Luxe Collection',
@@ -250,8 +253,65 @@ const priceTierProducts: Record<string, ExtendedProduct[]> = {
       ],
       inStock: true,
       stockCount: 15
+    },
+    {
+      id: 'm2',
+      brand: 'Luxe Collection',
+      description: 'Premium Italian leather jacket with silk lining. Handcrafted with attention to every detail.',
+
+      name: 'Elegant Summer Dress',
+      category: 'Dresses',
+      price: 79.99,
+      rating: 4.8,
+      reviews: 156,
+      image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=800',
+      sizes: ['XS', 'S', 'M', 'L', 'XL'],
+      colors: [
+        { name: 'Black', hex: '#000000' },
+        { name: 'Brown', hex: '#8B4513' },
+        { name: 'Cognac', hex: '#D27D2D' }
+      ],
+      inStock: true
+    },
+    {
+      id: 'l2',
+      name: 'Classic Blazer',
+      brand: 'Luxe Collection',
+      description: 'Premium Italian leather jacket with silk lining. Handcrafted with attention to every detail.',
+
+      category: 'Male',
+      price: 129.99,
+      rating: 4.9,
+      reviews: 203,
+      image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800',
+      sizes: ['S', 'M', 'L', 'XL'],
+      colors: [
+        { name: 'Black', hex: '#000000' },
+        { name: 'Brown', hex: '#8B4513' },
+        { name: 'Cognac', hex: '#D27D2D' }
+      ],
+      inStock: true
+    },
+    {
+      id: 'l4',
+      name: 'Designer Handbag',
+      brand: 'Luxe Collection',
+      description: 'Premium Italian leather jacket with silk lining. Handcrafted with attention to every detail.',
+      category: 'Accessories',
+      price: 199.99,
+      rating: 4.7,
+      reviews: 167,
+      sizes: ['S', 'M', 'L', 'XL'],
+      image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800',
+      colors: [
+        { name: 'Black', hex: '#000000' },
+        { name: 'Brown', hex: '#8B4513' },
+        { name: 'Cognac', hex: '#D27D2D' }
+      ],
+      inStock: true
     }
-  ]
+  ],
+
 };
 
 const ShopPage = () => {
@@ -267,7 +327,7 @@ const ShopPage = () => {
   const { toggleFavorite, isFavorite } = useFavorites();
 
   const handleProductClick = (productId: string) => {
-    const product = [...priceTierProducts.budget, ...priceTierProducts.midRange, ...priceTierProducts.luxury]
+    const product = [...priceTierProducts.budget]
       .find(p => p.id === productId);
     
     if (product) {
@@ -276,11 +336,11 @@ const ShopPage = () => {
     }
   };
 
-  const getPriceCategory = (price: number): 'budget' | 'mid-range' | 'luxury' => {
-    if (price <= 50) return 'budget';
-    if (price <= 150) return 'mid-range';
-    return 'luxury';
-  };
+  // const getPriceCategory = (price: number): 'budget' | 'mid-range' | 'luxury' => {
+  //   if (price <= 50) return 'budget';
+  //   if (price <= 150) return 'mid-range';
+  //   return 'luxury';
+  // };
 
   const getCategories = () => {
     switch (activeTab) {
@@ -334,44 +394,104 @@ const ShopPage = () => {
 
   const renderTabContent = () => {
     switch (activeTab) {
+      // case 'services':
+      //   return (z
+      //     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      //       {services.map(service => (
+      //         <div key={service.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+      //           <div className="relative aspect-video">
+      //             <img
+      //               src={service.image}
+      //               alt={service.name}
+      //               className="w-full h-full object-contain"
+      //             />
+      //             <div className="absolute bottom-2 right-2 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm">
+      //               {service.duration}
+      //             </div>
+      //           </div>
+      //           <div className="p-4">
+      //             <h3 className="font-semibold text-lg text-gray-800">{service.name}</h3>
+      //             <p className="text-gray-600 text-sm mb-2">{service.provider}</p>
+      //             <div className="flex items-center gap-2 mb-3">
+      //               <MapPin className="w-4 h-4 text-gray-400" />
+      //               <span className="text-sm text-gray-600">{service.location} ({service.distance} km)</span>
+      //             </div>
+      //             <div className="flex items-center gap-1 mb-4">
+      //               <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+      //               <span className="text-sm text-gray-600">
+      //                 {service.rating} ({service.reviews} reviews)
+      //               </span>
+      //             </div>
+      //             <div className="flex items-center justify-between">
+      //               <span className="text-lg font-bold text-gray-800">
+      //                 ${service.price}
+      //               </span>
+      //               <Link
+      //                 to="/book"
+      //                 className="px-4 py-2 bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition-colors"
+      //               >
+      //                 Book Now
+      //               </Link>
+      //             </div>
+      //           </div>
+      //         </div>
+      //       ))}
+      //     </div>
+      //   );
+
       case 'services':
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {services.map(service => (
               <div key={service.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                <div className="relative aspect-video">
+                <div className="relative aspect-square">
                   <img
                     src={service.image}
                     alt={service.name}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-2 right-2 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm">
-                    {service.duration}
-                  </div>
+                  <button
+                    onClick={() => toggleFavorite(service)}
+                    className="absolute top-2 right-2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white transition-colors"
+                  >
+                    <Heart
+                      className={`w-4 h-4 ${
+                        isFavorite(service.id)
+                          ? 'text-rose-500 fill-rose-500'
+                          : 'text-gray-600 hover:text-rose-500'
+                      }`}
+                    />
+                  </button>
+                  {!service.inStock && (
+                    <div className="absolute bottom-2 left-2 px-2 py-1 bg-gray-900/80 text-white text-xs rounded-full">
+                      Out of Stock
+                    </div>
+                  )}
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-gray-800">{service.name}</h3>
-                  <p className="text-gray-600 text-sm mb-2">{service.provider}</p>
-                  <div className="flex items-center gap-2 mb-3">
-                    <MapPin className="w-4 h-4 text-gray-400" />
-                    <span className="text-sm text-gray-600">{service.location} ({service.distance} km)</span>
-                  </div>
-                  <div className="flex items-center gap-1 mb-4">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm text-gray-600">
-                      {service.rating} ({service.reviews} reviews)
+                <div className="p-3">
+                  <h3 className="font-medium text-gray-800 line-clamp-2">{service.name}</h3>
+                  <p className="text-sm text-gray-600 mt-1 line-clamp-2">{service.description}</p>
+                  <div className="flex items-center gap-1 mt-2">
+                    <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                    <span className="text-xs text-gray-600">
+                      {service.rating} ({service.reviews})
                     </span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-gray-800">
-                      ${service.price}
+                  <div className="flex items-center justify-between mt-3">
+                    <span className="font-semibold text-gray-800">
+                      ${service.price.toFixed(2)}
                     </span>
-                    <Link
-                      to="/book"
-                      className="px-4 py-2 bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition-colors"
+                    <button
+                      onClick={() => addToCart(service)}
+                      disabled={!service.inStock}
+                      className={`px-3 py-1.5 rounded-lg text-sm ${
+                        service.inStock
+                          ? 'bg-rose-500 text-white hover:bg-rose-600'
+                          : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                      } transition-colors`}
                     >
-                      Book Now
-                    </Link>
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               </div>
@@ -447,7 +567,7 @@ const ShopPage = () => {
               products={priceTierProducts.budget}
               onProductClick={handleProductClick}
             />
-            <PriceTierSection
+            {/* <PriceTierSection
               title="Mid-Range Classics ($51-$150)"
               products={priceTierProducts.midRange}
               onProductClick={handleProductClick}
@@ -456,14 +576,14 @@ const ShopPage = () => {
               title="Luxury Picks ($151+)"
               products={priceTierProducts.luxury}
               onProductClick={handleProductClick}
-            />
+            /> */}
             
             {selectedProduct && (
               <ProductPreview
                 isOpen={previewOpen}
                 onClose={() => setPreviewOpen(false)}
                 product={selectedProduct}
-                priceCategory={getPriceCategory(selectedProduct.price)}
+               
               />
             )}
           </>
